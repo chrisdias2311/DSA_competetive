@@ -3,17 +3,18 @@
 #include<math.h>
 using namespace std;
 
-int prefixEvaluation(string s){
+int postfixEvaluation(string s){
     stack<int> st;
-    int op1, op2;
+    int op2, op1;
 
-    for(int i=s.length()-1; i>=0; i++){
-        if(s[i]>='0' && s[i]<='9'){
+    for(int i=0; i<s.length(); i++){
+        if (s[i]>='0' && s[i]<='9'){
             st.push(s[i]-'0');
         } else {
+            op2=st.top();
+            st.pop();
             op1=st.top();
             st.pop();
-            op2=st.top();
 
             switch (s[i])
             {
@@ -46,11 +47,10 @@ int prefixEvaluation(string s){
 }
 
 int main(){
-
-    cout<<prefixEvaluation("-+7*45+20")<<endl;
+    cout<<postfixEvaluation("46+2/5*7+");
 
     return 0;
 }
 
-//"-+7*45+20"
+
 //Time complexity O(l) where l is the length of the string 
