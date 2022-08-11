@@ -64,8 +64,8 @@ void deleteAtHead(node* &head){
     }
 
     node* toDelete=head;
-    temp->next=head->next;
-    head=head->next;
+    temp->next=head->next;       //put the value of our new heat in the "next" of last elemenet
+    head=head->next;             //set our second element as out new head 
 
     delete toDelete;
 }

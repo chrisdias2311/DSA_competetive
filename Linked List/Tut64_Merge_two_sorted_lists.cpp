@@ -101,7 +101,7 @@ node* mergeRecursive(node* &head1, node* head2){
         result=head2;
         result->next=mergeRecursive(head1, head2->next);
     }
-}
+}                                                    //Need to be revised 
 
 
 int main(){
