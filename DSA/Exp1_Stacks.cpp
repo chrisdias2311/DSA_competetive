@@ -38,10 +38,6 @@ class stack{
         return arr[top];
     }
 
-    bool empty(){
-        return top==-1;
-    }
-
     void display(){
         for(int i=0; i<=top; i++){
             cout<<arr[i];
@@ -51,19 +47,44 @@ class stack{
 
 int main(){
     stack st;
-    cout<<st.empty()<<endl;
-    st.push(1);
-    st.push(2);
-    st.push(3);
-    st.push(4);
-    st.push(5);
-    st.push(6);
-    // cout<<st.Top()<<endl;
-    // st.pop();
-    // st.pop();
-    // cout<<st.Top()<<endl;
-    // cout<<st.empty();
-    st.display();
+    
+    int choice;
+    char condition;
+
+    do {
+        cout<<"Enter your choice: \n 1. Push \n 2.Pop \n 3.Peek \n 4.Display"<<endl;
+        cin>>choice;
+
+        switch (choice)
+        {
+        case 1:
+            cout<<"Enter a number to push in stack: ";
+            int num;
+            cin>>num;
+            st.push(num);
+            break;
+
+        case 2:    
+            st.pop();
+            break;
+
+        case 3:    
+            st.peek();
+            break;  
+
+        case 4: 
+            st.display();
+            break;      
+        
+        default:
+            break;
+        }
+
+        cout<<"\n Do you want to continue? (Y/n)";
+        cin>>condition;
+
+    } while (condition=='y' || condition=='Y');
+    
 
     return 0;
 }
