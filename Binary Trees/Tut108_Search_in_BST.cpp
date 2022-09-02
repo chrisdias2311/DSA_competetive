@@ -29,26 +29,47 @@ Node* searchInBST(Node* root, int key){
     return searchInBST(root->right, key);
 }
 
-// Node* deleteInBST(Node* root, int key){
-//     if(key<root->data){
-//         root->left = deleteInBST(root->left, key);
-//     } else if(key>root->data){
-//         root->right = deleteInBST(root->right, key);
-//     } else {
-//         if(root->left == NULL){
-//             Node* temp = root->right;
-//             free(root);
-//             return temp;
-//         } else if(root->right){
-//             Node* temp = root->left;
-//             free(root);
-//             return temp;
-//         }
+Node* inorderSucc(Node* root){
+    Node* curr = root;
+    while(curr && curr->left != NULL){
+        curr = curr->left;
+    }
+    return curr;
+}
 
-//         //Case 3
-//         Node* te
-//     }
-// }
+Node* deleteInBST(Node* root, int key){
+    if(key<root->data){
+        root->left = deleteInBST(root->left, key);
+    } else if(key>root->data){
+        root->right = deleteInBST(root->right, key);
+    } else {
+        if(root->left == NULL){
+            Node* temp = root->right;
+            free(root);
+            return temp;
+        } else if(root->right){
+            Node* temp = root->left;
+            free(root);
+            return temp;
+        }
+
+        //Case 3  (Inorder successor case)
+        Node* temp = inorderSucc(root->right);
+        root->data = temp->data;
+        root->right = deleteInBST(root->right, temp->data);
+    }
+    return root;
+}
+
+void inorder(Node* root){
+    if(root==NULL){
+        return;
+    }
+
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right);
+}
 
 int main(){
     Node* root = new Node(4);
@@ -61,8 +82,13 @@ int main(){
     if(searchInBST(root, 5)==NULL){
         cout<<"key doesn't exist";
     } else {
-        cout<<"Key Exists!";
+        cout<<"Key Exists! \n";
     }
+
+    inorder(root);
+    root = deleteInBST(root, 5);
+    cout<<endl;
+    inorder(root);
 
     return 0;
 }
