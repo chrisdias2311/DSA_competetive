@@ -131,11 +131,3 @@ class Top: public Middle {
 
 //Q. Write the names of all the members, which are directly accessible by the object T of class Top declared in main() function.
 //=> Member functions: Take(), Give(), In(), Out();
-
-
-
-
-
-
-
-some random stuff 
