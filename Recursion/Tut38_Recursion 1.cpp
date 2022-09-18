@@ -51,7 +51,7 @@ using namespace std;
 
 
 
-/// find N using recursion
+/// find factorial of N using recursion
 
 // int factorial(int n){
 //     if(n==0){
