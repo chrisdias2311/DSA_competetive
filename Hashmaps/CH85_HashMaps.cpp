@@ -63,3 +63,10 @@ int main(){
 
     return 0;
 }
+
+
+
+
+std::map<char, int>::iterator it = m.find('c'); 
+if (it != m.end())
+    it->second = 42;
