@@ -16,7 +16,6 @@ struct Node{
     }
 };
 
-
 void preorder(struct Node* root){
     if(root==NULL){
         return;

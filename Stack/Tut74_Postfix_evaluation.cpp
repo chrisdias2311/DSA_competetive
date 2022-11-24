@@ -47,7 +47,7 @@ int postfixEvaluation(string s){
 }
 
 int main(){
-    cout<<postfixEvaluation("46+2/5*7+");
+    cout<<postfixEvaluation("A-(B/C+(d'E*F)/G)*H");
 
     return 0;
 }

@@ -6,7 +6,6 @@ using namespace std;
 int prefixEvaluation(string s){
     stack<int> st;
     int op1, op2;
-
     for(int i=s.length()-1; i>=0; i++){
         if(s[i]>='0' && s[i]<='9'){
             st.push(s[i]-'0');

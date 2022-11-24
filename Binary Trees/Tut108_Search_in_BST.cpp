@@ -29,6 +29,7 @@ Node* searchInBST(Node* root, int key){
     return searchInBST(root->right, key);
 }
 
+
 Node* inorderSucc(Node* root){
     Node* curr = root;
     while(curr && curr->left != NULL){
@@ -36,7 +37,6 @@ Node* inorderSucc(Node* root){
     }
     return curr;
 }
-
 Node* deleteInBST(Node* root, int key){
     if(key<root->data){
         root->left = deleteInBST(root->left, key);

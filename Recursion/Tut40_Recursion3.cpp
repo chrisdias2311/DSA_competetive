@@ -62,18 +62,18 @@ using namespace std;
 
 //Tower of Hanoi
 
-// void towerOfHanoi(int n, char src, char dest, char helper){
-//     if(n==0){
-//         return;
-//     }
+void towerOfHanoi(int n, char src, char dest, char helper){
+    if(n==0){
+        return;
+    }
 
-//     towerOfHanoi(n-1, src, helper, dest);               //first move topmost n-1 bloacks from rc to helper 
-//     cout<<"Move from "<<src<<" to "<<dest<<endl;        //Move the boottommost block from src to dest 
-//     towerOfHanoi(n-1, helper, dest, src);               // Move the blocks in helper to destination 
-// }
-// int main(){
-//     towerOfHanoi(3, 'A', 'C', 'B');
-// }
+    towerOfHanoi(n-1, src, helper, dest);               //first move topmost n-1 bloacks from rc to helper 
+    cout<<"Move from "<<src<<" to "<<dest<<endl;        //Move the boottommost block from src to dest 
+    towerOfHanoi(n-1, helper, dest, src);               // Move the blocks in helper to destination 
+}
+int main(){
+    towerOfHanoi(3, 'A', 'B', 'C');
+}
 
 
 

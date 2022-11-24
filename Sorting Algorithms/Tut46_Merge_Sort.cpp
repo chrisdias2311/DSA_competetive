@@ -33,6 +33,7 @@ void merge(int arr[], int l, int mid, int r){
         }
     }
 
+    //used to transfer the final pending elements of both the arrays 
     while(i<n1){
         arr[k]=a[i];
         k++;
@@ -41,7 +42,7 @@ void merge(int arr[], int l, int mid, int r){
     while(j<n2){
         arr[k]=a[i];
         k++;
-        i++;
+        j++;
     }
 }
 
